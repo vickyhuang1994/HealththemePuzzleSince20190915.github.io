@@ -1,0 +1,700 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+    <style>
+      .containter {
+        width: 100%;
+        height: 60px;
+        margin: auto;
+        background-color: #333;
+      }
+
+      nav {
+        width: 960px;
+        margin: auto;
+        height: 60px;
+        /*background-color: #333;*/
+      }
+      nav ul {
+        padding: 0;
+        margin: 0;
+      }
+      nav a {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        line-height: 60px;
+        padding: 0 15px;
+        transition: all 0.5s;
+      }
+      nav .logo {
+        float: left;
+      }
+      nav .logo a {
+        padding-right: 50px;
+        font-size: 1.2em;
+        background-color: #555;
+      }
+      nav .menu {
+        float: left;
+      }
+      nav .menu a:hover {
+        background-color: #666;
+      }
+
+      nav .menu li {
+        float: left;
+        list-style: none;
+      }
+
+      /*RWD_________________________*/
+      * {
+        box-sizing: border-box;
+        font-family: "圓體-繁 細體";
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+      .clearfix::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      img {
+        width: 100%;
+      }
+      .btn2 {
+        display: block;
+        text-decoration: none;
+        color: #333;
+        padding: 25px 20px;
+        border: 3px solid #999;
+        text-align: center;
+      }
+      .btn2 a {
+        color: #000;
+        text-decoration: none;
+        transition: all 1s;
+      }
+      .btn2 a:hover {
+        background-color: #666;
+        color: #fff;
+      }
+
+a {
+  color: #000;
+  text-decoration: none;
+  transition: all 1s;
+}
+      p {
+        font-size: 14px;
+        color: #333;
+        line-height: 1.5em;
+        font-weight: 300;
+        letter-spacing: 1px;
+      }
+
+      h2 {
+        font-size: 16px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+
+      .line {
+        position: relative;
+      }
+
+      .line::before {
+        content: "";
+        display: block;
+        position: absolute;
+        border-top: 3px solid #ff6060;
+        width: 60px;
+        top: 25px;
+        left: 0px;
+      }
+
+      .line--light {
+        color: #fff;
+        position: relative;
+      }
+
+      .line--light::before {
+        content: "";
+        display: block;
+        position: absolute;
+        border-top: 3px solid #fff;
+        width: 60px;
+        top: 22px;
+        left: 0px;
+      }
+      /*手機版*/
+      @media screen and (min-width: 576px) {
+        .fixed-width {
+          width: 576px;
+          margin: auto;
+        }
+        .col-12 {
+          width: calc(100% / 12 * 12);
+        }
+        .col-11 {
+          width: calc(100% / 12 * 11);
+        }
+        .col-10 {
+          width: calc(100% / 12 * 10);
+        }
+        .col-9 {
+          width: calc(100% / 12 * 9);
+        }
+        .col-8 {
+          width: calc(100% / 12 * 8);
+        }
+        .col-7 {
+          width: calc(100% / 12 * 7);
+        }
+        .col-6 {
+          width: calc(100% / 12 * 6);
+        }
+        .col-5 {
+          width: calc(100% / 12 * 5);
+        }
+        .col-4 {
+          width: calc(100% / 12 * 4);
+        }
+        .col-3 {
+          width: calc(100% / 12 * 3);
+        }
+        .col-2 {
+          width: calc(100% / 12 * 2);
+        }
+        .col-1 {
+          width: calc(100% / 12 * 1);
+        }
+        /*  [class*="col"] {
+          float: left;
+          padding: 15px;
+        }*/
+      }
+      /* @media screen and (max-width: 1000px) {
+         [class*="col"] {
+           width: 100%;
+           padding: 15px;
+         }
+       }*/
+      /* @media screen and (max-width: 1000px) {
+         [class*="col"] {
+           width: 50%;
+           float: left;
+           padding: 15px;
+         }*/
+      /*平板版*/
+      @media screen and (min-width: 768px) {
+        .fixed-width {
+          width: 768px;
+          margin: auto;
+        }
+        .col-md-12 {
+          width: calc(100% / 12 * 12);
+        }
+        .col-md-11 {
+          width: calc(100% / 12 * 11);
+        }
+        .col-md-10 {
+          width: calc(100% / 12 * 10);
+        }
+        .col-md-9 {
+          width: calc(100% / 12 * 9);
+        }
+        .col-md-8 {
+          width: calc(100% / 12 * 8);
+        }
+        .col-md-7 {
+          width: calc(100% / 12 * 7);
+        }
+        .col-md-6 {
+          width: calc(100% / 12 * 6);
+        }
+        .col-md-5 {
+          width: calc(100% / 12 * 5);
+        }
+        .col-md-4 {
+          width: calc(100% / 12 * 4);
+        }
+        .col-md-3 {
+          width: calc(100% / 12 * 3);
+        }
+        .col-md-2 {
+          width: calc(100% / 12 * 2);
+        }
+        .col-md-1 {
+          width: calc(100% / 12 * 1);
+        }
+        /* [class*="col"] {
+          float: left;
+          padding: 15px;
+        }*/
+      }
+
+      /*電腦版*/
+      @media screen and (min-width: 1200px) {
+        .fixed-width {
+          width: 1200px;
+          margin: auto;
+        }
+        .col-xl-12 {
+          width: calc(100% / 12 * 12);
+        }
+        .col-xl-11 {
+          width: calc(100% / 12 * 11);
+        }
+        .col-xl-10 {
+          width: calc(100% / 12 * 10);
+        }
+        .col-xl-9 {
+          width: calc(100% / 12 * 9);
+        }
+        .col-xl-8 {
+          width: calc(100% / 12 * 8);
+        }
+        .col-xl-7 {
+          width: calc(100% / 12 * 7);
+        }
+        .col-xl-6 {
+          width: calc(100% / 12 * 6);
+        }
+        .col-xl-5 {
+          width: calc(100% / 12 * 5);
+        }
+        .col-xl-4 {
+          width: calc(100% / 12 * 4);
+        }
+        .col-xl-3 {
+          width: calc(100% / 12 * 3);
+        }
+        .col-xl-2 {
+          width: calc(100% / 12 * 2);
+        }
+        .col-xl-1 {
+          width: calc(100% / 12 * 1);
+        }
+        /*[class*="col"] {
+          float: left;
+          padding: 15px;
+        }*/
+      }
+      /*共同區*/
+      [class*="col"] {
+        float: left;
+        padding: 15px;
+      }
+      .full-width {
+        width: 100%;
+      }
+
+      /* feature */
+      #feature {
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+      #feature h3 {
+        font-size: 30px;
+        font-weight: normal;
+        line-height: 1em;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+
+      #feature p {
+        padding-top: 15px;
+        padding-bottom: 30px;
+      }
+      /* gallery */
+#gallery {
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+/* blog */
+#blog {
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+#blog h3 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+#blog p {
+  margin-bottom: 20px;
+}
+
+#blog .pic {
+  position: relative;
+  margin-bottom: 20px;
+}
+#blog .pic .date {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: var(--primaryColor);
+  bottom: 4px;
+
+  display: table;
+  text-align: center;
+}
+#blog .pic .date .day {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* footer */
+footer {
+  height: 50px;
+  line-height: 50px;
+}
+
+footer .col-4 {
+  text-align: right;
+}
+
+footer .col-4 a {
+  margin: 0 10px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: #aaa;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+}
+
+footer .col-4 a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+#author {
+  height: 500px;
+
+  background-position: center;
+  background-size: cover;
+  /* position: absolute; */
+  color: white;
+}
+#author p {
+  color: white;
+}
+.authoritem {
+  height: 120px;
+  border-width: 0 0 2px 0;
+  border-color: #fff;
+  border-style: solid;
+}
+
+    </style>
+  </head>
+
+  <body>
+    <!--nav_________________________-->
+    <div class="containter">
+      <nav>
+        <div class="logo"><a href="#">Health theme Puzzle</a></div>
+
+        <div class="menu">
+          <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#feature">HEALTH THEME健康主題</a></li>
+            <li><a href="#events">觀察症狀</a></li>
+            <li><a href="#gallery">需就診情形</a></li>
+            <li><a href="#blog">行為模式轉換</a></li>
+            <li><a href="#section-contact">CONTACT</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!--header_________________________-->
+    <header class="full-width">
+      <div class="full-width clearfix">
+        <div class="fixed-width">
+          <img src="C:\htdocs\www\java108b\2019_health_web_project_AI_svg/2019_ai_svg/pic_icon_all.svg" alt="pic_icon_all.svg" height: 800px;
+            background-position: center; background-size: cover; background-repeat: no-repeat;>
+        </div>
+      </div>
+    </header>
+    <!--feature_________________________-->
+    <div id="feature" class="full-width clearfix">
+      <div class="fixed-width">
+        <div class="col-7">
+          <div class="col-12">
+            <div class="col-2"></div>
+            <h2 class="line">HEALTH THEME健康主題</h2>
+            <!--col-5-->
+            <div class="col-5">
+              <a href="#" class="btn2" style="font-weight: 700;">HOME</a>
+            </div>
+            <!--col-5-->
+          </div>
+          <div class="col-2"></div>
+          <div class="col-10">
+            <h3>
+              拼出健康主題拼圖，拉近健康生活
+            </h3>
+            <p>
+              Health theme Puzzle提供健康主題插圖。
+              "健康主題拼圖"形式上以曲線化的樹枝條及角色，排出圖示動線，如此讀者可以由主題中心延伸層層的連結內容。內容主題引領從心觀察，觀察生理現象，探索適合拉近健康生活的方法。
+
+            </p>
+
+            <div class="col-4">
+              <h2>觀察症狀</h2>
+              <p>
+               如果有觀察到心理和生理上的不適...
+              </p>
+
+              <a href="#events" class="btn">MORE</a>
+            </div>
+            <div class="col-4">
+              <h2>需就診情形</h2>
+              <p>
+                如果觀察到的不適影響到生活...
+              </p>
+              <a href="#gallery" class="btn">MORE</a>
+            </div>
+            <div class="col-4">
+              <h2>行為模式轉換</h2>
+              <p>
+               如果想探索適合拉近健康生活的方法...
+              </p>
+              <a href="#blog" class="btn">MORE</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-5 feature-gallery">
+          <img
+            src="C:\htdocs\www\java108b\2019_health_web_project_AI_svg/2019_ai_svg/pic_icon_all.svg"
+            alt="pic_icon_all.svg"
+          />
+        </div>
+      </div>
+        <!--feature_________________________-->
+        <div class="col-7"><div class="col-12">
+          <div class="col-2"></div>
+          <div class="col-10"><h3>人物介紹</h3>
+          <p><h4>DayShadow and NightLighting</h4><br>
+            <h4>電子信箱</h4>
+            shua101081005@gmail.com<br><br>
+            <h4>人物職業Costume play扮演設定</h4><br>
+            有耐心的醫事人員和在黑暗奮鬥中的病人<br>
+          </p><br></div>
+
+            <div class="col-5">
+              <div class="full-width clearfix">
+                <div class="fixed-width">
+                  <img src="C:\htdocs\www\java108b\2019_health_web_project_AI_svg/2019_ai_svg/pic_teach_characters.svg"
+                    alt="pic_teach_characters.svg" height: 800px; background-position: center; background-size: cover;
+                    background-repeat: no-repeat;>
+                </div>
+              </div>
+            </div>
+
+      </div></div>
+
+
+         <!--feature_________________________-->
+    </div>
+
+    <!--events_________________________-->
+    <div id="events" class="full-width clearfix">
+      <div class="fixed-width">
+        <div class="col-7">
+          <div class="col-12">
+            <div class="col-2"></div>
+            <h2 class="line">觀察症狀</h2>
+            <div class="col-5">
+              <a href="#" class="btn2" style="font-weight: 700;">HOME</a>
+            </div>
+            <div class="full-width clearfix">
+              <div class="fixed-width">
+                <img
+                src="C:\htdocs\www\java108b\2019_health_web_project_AI_svg/2019_ai_svg/pic_theme_sick1_all.svg"
+                alt="pic_theme_sick1_all.svg" height: 800px;
+                background-position: center; background-size: cover;
+                background-repeat: no-repeat;>
+              </div>
+            </div>
+
+            <p>
+              如果有觀察到心理不適...
+            </p>
+
+            <div class="full-width clearfix">
+              <div class="fixed-width">
+                <img
+                src="C:\htdocs\www\java108b\2019_health_web_project_AI_svg/2019_ai_svg/pic_theme_sick2_all.svg"
+                alt="pic_theme_sick2_all.svg" height: 800px;
+                background-position: center; background-size: cover;
+                background-repeat: no-repeat;>
+              </div>
+            </div>
+
+            <p>
+            如果有觀察到生理上的不適...
+            </p>
+          </div>
+        </div>
+      </div>
+        </div>
+      <!--gallery_________________________-->
+      <div id="gallery" class="full-width clearfix">
+        <div class="fixed-width clearfix">
+          <div class="col-7">
+            <div class="col-12">
+              <div class="col-2"></div>
+
+              <h2 class="line">需就診情形</h2>
+              <div class="col-5">
+                <a href="#" class="btn2" style="font-weight: 700;">HOME</a>
+              </div>
+
+              <div class="full-width clearfix">
+                <div class="fixed-width">
+                  <img
+                  src="C:\htdocs\www\java108b\2019_health_web_project_AI_svg/2019_ai_svg/pic_theme_sick2_teach_002.svg"
+                  alt="pic_theme_sick2_teach_002.svg" height: 800px;
+                  background-position: center; background-size: cover;
+                  background-repeat: no-repeat;>
+                </div>
+              </div>
+              <p>
+                如果觀察到的不適影響到生活...懷疑是健康出問題，可以向診所醫師請教。
+
+
+              </p>
+            </div>
+          </div>
+
+          </div>
+        </div>
+      </div>
+
+    <!--blog_________________________-->
+    <div id="blog" class="full-width clearfix">
+      <div class="fixed-width clearfix">
+        <div class="col-7">
+          <div class="col-12">
+            <div class="col-2"></div>
+            <h2 class="line">行為模式轉換</h2>
+            <div class="col-5">
+              <a href="#" class="btn2" style="font-weight: 700;">HOME</a>
+            </div>
+            <div class="full-width clearfix">
+              <div class="fixed-width">
+                <img
+                src="C:\htdocs\www\java108b\2019_health_web_project_AI_svg/2019_ai_svg/pic_theme_cure1_all.svg"
+                alt="pic_theme_cure1_all.svg" height: 800px;
+                background-position: center; background-size: cover;
+                background-repeat: no-repeat;>
+              </div>
+            </div>
+
+            <p>
+              如果想探索適合拉近健康生活的方法...
+            </p>
+
+            <div class="full-width clearfix">
+              <div class="fixed-width">
+                <img
+                src="C:\htdocs\www\java108b\2019_health_web_project_AI_svg/2019_ai_svg/pic_theme_cure2_all.svg"
+                alt="pic_theme_cure2_all.svg" height: 800px;
+                background-position: center; background-size: cover;
+                background-repeat: no-repeat;>
+              </div>
+            </div>
+
+            <p>
+            如果想探索適合拉近健康生活的方法...
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--section-contact_________________________-->
+        <div id="map" class="full-width">
+          <div class="full-width">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2557.109752613053!2d121.31238694994745!3d24.989944153134605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x97d510c159d4f928!2z5qGD5ZyS54Gr6LuK56uZ!5e0!3m2!1szh-TW!2stw!4v1568526008610!5m2!1szh-TW!2stw"
+              width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+
+
+            <!--______________________________________-->
+            <div id="section-contact" class="page-section notoppadding">
+
+              <div class="full-width clearfix">
+                <div class="fixed-width">
+                  <img src="C:\htdocs\www\java108b\2019_health_web_project_AI_svg/2019_ai_svg/pic_theme_sick2_teach_001.svg"
+                    alt="pic_theme_sick2_teach_001.svg" height: 800px; background-position: center; background-size: cover;
+                    background-repeat: no-repeat;>
+                </div>
+              </div>
+
+
+              <div class="row noleftmargin norightmargin bottommargin-lg align-items-stretch">
+                <div id="headquarters-map" class="col-lg-8 col-md-6 gmap d-none d-md-block"></div>
+                <div class="col-lg-4 col-md-6" style="background-color: #F5F5F5;">
+                  <div class="col-padding">
+                    <h3 class="font-body t400 ls1">CONTACT<br>聯絡Health theme Puzzle</h3>
+
+
+                    <div style="font-size: 16px; line-height: 1.7;">
+
+                      <div class="clear topmargin-sm"></div>
+
+                      <address style="line-height: 1.7;">
+                        <strong>Taiwan:</strong><br>
+                        330桃園市<br>
+                        桃園區<br>
+                      </address>
+
+                      <div class="clear topmargin"></div>
+
+                      <abbr title="Phone Number"><strong>LINE:</strong></abbr><br>0926051026<br>
+
+                      <abbr title="Email Address"><strong>Email:</strong></abbr>
+                      shua101081005@gmail.com
+
+                      <div class="col-5"><a href="#" class="btn2" style="font-weight: 700;">HOME</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            </section><!-- #content end -->
+            <!--______________________________________-->
+          </div>
+        </div>
+    <!--footer_________________________-->
+    <footer class="full-width clearfix">
+      <div id="map" class="fixed-width clearfix">
+        <div class="col-8">
+          Copyright Health theme Puzzle since 2019 | All Rights Reserved
+        </div>
+        <div class="col-4">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#"><i class="fab fa-github-alt"></i></a>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
