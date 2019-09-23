@@ -4,54 +4,76 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+  <script>
+    $(document).ready(function () {
+      //視窗有改變時
+      $(window).resize(function () {
+        let w = $(window).width();
+        if (w > 600) {
+          $(".hamburger").hide();
+          $(".menu").show();
+        } else {
+          $(".hamburger").show();
+          $(".menu").hide();
+        }
+      });
+
+      $(".hamburger").click(function () {
+        console.log("click");
+        $(".menu").slideToggle();
+      });
+    });
+  </script>
+
     <title>Document</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 
     <style>
-      .containter {
-        width: 100%;
-        height: 60px;
-        margin: auto;
-        background-color: #333;
+ /*____________________________________________________________________*/
+      .hamburger {
+        height: 50px;
+        width: 50px;
+        position: relative;
+        cursor: pointer;
       }
 
-      nav {
-        width: 960px;
-        margin: auto;
-        height: 60px;
-        /*background-color: #333;*/
-      }
-      nav ul {
-        padding: 0;
-        margin: 0;
-      }
-      nav a {
+      .hamburger span {
         display: block;
-        color: #fff;
-        text-decoration: none;
-        line-height: 60px;
-        padding: 0 15px;
-        transition: all 0.5s;
-      }
-      nav .logo {
-        float: left;
-      }
-      nav .logo a {
-        padding-right: 50px;
-        font-size: 1.2em;
-        background-color: #555;
-      }
-      nav .menu {
-        float: left;
-      }
-      nav .menu a:hover {
-        background-color: #666;
+        position: absolute;
+        width: 40px;
+        height: 5px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: #eee;
+        border-radius: 5px;
       }
 
-      nav .menu li {
-        float: left;
-        list-style: none;
+      .hamburger span::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 40px;
+        height: 5px;
+        background-color: #eee;
+        border-radius: 5px;
+        bottom: 10px;
       }
+      .hamburger span::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 40px;
+        height: 5px;
+        background-color: #eee;
+        border-radius: 5px;
+        top: 10px;
+      }
+
+      /*____________________________________________________________________*/
 
       /*RWD_________________________*/
       * {
@@ -93,6 +115,7 @@ a {
   transition: all 1s;
 }
       p {
+         font-family: "微軟正黑體";
         font-size: 14px;
         color: #333;
         line-height: 1.5em;
@@ -101,6 +124,7 @@ a {
       }
 
       h2 {
+         font-family: "微軟正黑體";
         font-size: 16px;
         padding-top: 15px;
         padding-bottom: 15px;
@@ -114,9 +138,9 @@ a {
         content: "";
         display: block;
         position: absolute;
-        border-top: 3px solid #ff6060;
-        width: 60px;
-        top: 25px;
+        border-top: 3.5px solid #90ffab;
+        width: 300px;
+        top: 10px;
         left: 0px;
       }
 
@@ -135,11 +159,64 @@ a {
         left: 0px;
       }
       /*手機版*/
-      @media screen and (min-width: 576px) {
+      @media screen and (max-width: 600px) {
         .fixed-width {
-          width: 576px;
+          width:  600px;
           margin: auto;
         }
+         nav {
+
+          width: 100%;
+          /* height: 50px; */
+          background-color: #333;
+          line-height: 50px;
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+        nav ul {
+          padding: 0;
+          margin: 0;
+        }
+        nav a {
+          transition: all 0.5s;
+        }
+        .logo a {
+          font-size: 1.2em;
+          text-decoration: none;
+          color: #eee;
+        }
+
+        ul {
+          margin: 0;
+        }
+
+        .menu {
+          display: none;
+        }
+
+        .menu li {
+          /* float: left; */
+          list-style: none;
+        }
+
+        .menu a {
+          text-decoration: none;
+          color: #eee;
+          /* margin: 0 15px; */
+        }
+
+        nav .menu a:hover {
+          display: block;
+          line-height: 50px;
+          background-color: #666;
+          transition: all 0.5s;
+        }
+
+        .hamburger {
+          display: block;
+          float: right;
+        }
+
         .col-12 {
           width: calc(100% / 12 * 12);
         }
@@ -194,11 +271,65 @@ a {
            padding: 15px;
          }*/
       /*平板版*/
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: 600px) {
         .fixed-width {
-          width: 768px;
+          width:  600px;
           margin: auto;
         }
+
+         nav {
+           position: fixed;
+          width: 100%;
+          height: 50px;
+          background-color: #333;
+          line-height: 50px;
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+        nav ul {
+          padding: 0;
+          margin: 0;
+        }
+        nav a {
+          transition: all 0.5s;
+        }
+        .logo {
+          font-size: 1.2em;
+          float: left;
+        }
+
+        .logo a {
+          font-size: 1.2em;
+          text-decoration: none;
+          color: #eee;
+        }
+
+        .menu {
+          float: right;
+        }
+
+        .menu li {
+          float: left;
+          list-style: none;
+        }
+
+        .menu a {
+          text-decoration: none;
+          color: #eee;
+          margin: 0 15px;
+        }
+
+        nav .menu a:hover {
+          display: block;
+          line-height: 50px;
+          background-color: #666;
+          transition: all 0.5s;
+        }
+
+        .hamburger {
+          display: none;
+        }
+
         .col-md-12 {
           width: calc(100% / 12 * 12);
         }
@@ -241,53 +372,7 @@ a {
         }*/
       }
 
-      /*電腦版*/
-      @media screen and (min-width: 1200px) {
-        .fixed-width {
-          width: 1200px;
-          margin: auto;
-        }
-        .col-xl-12 {
-          width: calc(100% / 12 * 12);
-        }
-        .col-xl-11 {
-          width: calc(100% / 12 * 11);
-        }
-        .col-xl-10 {
-          width: calc(100% / 12 * 10);
-        }
-        .col-xl-9 {
-          width: calc(100% / 12 * 9);
-        }
-        .col-xl-8 {
-          width: calc(100% / 12 * 8);
-        }
-        .col-xl-7 {
-          width: calc(100% / 12 * 7);
-        }
-        .col-xl-6 {
-          width: calc(100% / 12 * 6);
-        }
-        .col-xl-5 {
-          width: calc(100% / 12 * 5);
-        }
-        .col-xl-4 {
-          width: calc(100% / 12 * 4);
-        }
-        .col-xl-3 {
-          width: calc(100% / 12 * 3);
-        }
-        .col-xl-2 {
-          width: calc(100% / 12 * 2);
-        }
-        .col-xl-1 {
-          width: calc(100% / 12 * 1);
-        }
-        /*[class*="col"] {
-          float: left;
-          padding: 15px;
-        }*/
-      }
+
       /*共同區*/
       [class*="col"] {
         float: left;
@@ -303,6 +388,7 @@ a {
         padding-bottom: 50px;
       }
       #feature h3 {
+         font-family: "微軟正黑體";
         font-size: 30px;
         font-weight: normal;
         line-height: 1em;
@@ -310,7 +396,16 @@ a {
         padding-bottom: 15px;
       }
 
+ #feature h4 {
+         font-family: "微軟正黑體";
+        font-weight: normal;
+        line-height: 1em;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+
       #feature p {
+         font-family: "微軟正黑體";
         padding-top: 15px;
         padding-bottom: 30px;
       }
@@ -326,12 +421,14 @@ a {
 }
 
 #blog h3 {
+   font-family: "微軟正黑體";
   margin-bottom: 20px;
   font-size: 1.5em;
   font-weight: 300;
 }
 
 #blog p {
+   font-family: "微軟正黑體";
   margin-bottom: 20px;
 }
 
@@ -389,6 +486,7 @@ footer .col-4 a:hover {
   color: white;
 }
 #author p {
+   font-family: "微軟正黑體";
   color: white;
 }
 .authoritem {
@@ -405,6 +503,9 @@ footer .col-4 a:hover {
     <!--nav_________________________-->
     <div class="containter">
       <nav>
+          <div class="hamburger">
+            <span></span>
+          </div>
         <div class="logo"><a href="#">Health theme Puzzle</a></div>
 
         <div class="menu">
